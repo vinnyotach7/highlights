@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{%endblock%}
 
-<head>
-    <meta charset="utf-8"> {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to the best News Site </title>
-    {% endif %}
-</head>
-{% extends 'base.html'%} {% import 'macros.html' as macro%}
-
-<body>
-    {% block content %}
+{% block content %}
 
     <div class="jumbotron" style="background-color: lime;">
         <h3 style="text-align:center;">WELCOME TO BEST NEWS SOURCES ONLINE.</h3>
@@ -20,7 +14,4 @@
     <ul>
         {{ macro.displaySourceList(news) }}
     </ul>
-    {% endblock%}
-</body>
-
-</html>
+{% endblock%}
