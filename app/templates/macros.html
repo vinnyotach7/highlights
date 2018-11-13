@@ -4,11 +4,13 @@
     <div class="col-md-4">
         <div class="thumbnail">
             <div class="card-header" style="background-color:#EDEDEE; padding:6px; ">
-                <h3 style="text-align:center;">{{ new.source}}</h3>
+                <h3 style="text-align:center;">{{ new.name}}</h3>
             </div>
-            <h6><b>{{ new.description }}</b></h6>
+            <img src="{{new.urlToImage}}" alt="" height='100' width='200'>
+            <p>{{new.content|truncate(100)}}</p>
             <hr>
-            <a href="/news/{{new.id}}"><button style="color:black;background-color:red">view</button></a>
+            <p>Published at: {{new.publishedAt|truncate(14)}}</p>
+            <a href="{{new.description}}" target='self'><button style="color:black;background-color:red">Storyline</button></a>
         </div>
     </div>
 
